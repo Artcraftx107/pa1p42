@@ -1,8 +1,6 @@
 package cuentapalabras;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.NoSuchElementException;
 
@@ -68,5 +66,30 @@ public class ContadorPalabras {
         }
         return aux;
     }
-    
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder(); // Create a StringBuilder object
+        for (PalabraEnTexto palabra : palabras) { // Iterate over each PalabraEnTexto object in the list 'palabras'
+            sb.append(palabra).append(" - "); // Append the string representation of the PalabraEnTexto object followed by a hyphen and space to the StringBuilder
+        }
+        if (sb.length() > 2) { // Check if the StringBuilder's length is greater than 2 characters
+            sb.setLength(sb.length() - 2); // If so, remove the last two characters (hyphen and space) from the StringBuilder
+        }
+        return "[" + sb.toString() + "]"; // Return the StringBuilder content enclosed in square brackets as a String
+    }
+    public void presentaPalabras(String fichero)throws FileNotFoundException{
+        try (PrintWriter pw = new PrintWriter(fichero)){
+            for(PalabraEnTexto palabraEnTexto : palabras){
+                pw.println(palabraEnTexto);
+            }
+        }catch (FileNotFoundException e){
+            throw new FileNotFoundException("The file specified was not found");
+        }
+    }
+    public void presentaPalabras(PrintWriter pw){
+        for(PalabraEnTexto palabraEnTexto : palabras){
+            pw.println(palabraEnTexto);
+        }
+    }
+
 }
