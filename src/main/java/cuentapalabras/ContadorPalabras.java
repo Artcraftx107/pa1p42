@@ -23,5 +23,10 @@ public class ContadorPalabras {
         }
         return pos;
     }
-    
+    protected void incluye(String pal){
+        
+    }
+    public PalabraEnTexto encuentra(String n){
+
+    }
 }
