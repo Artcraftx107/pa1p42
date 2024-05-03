@@ -1,11 +1,3 @@
-CON: 4
-LA: 11
-A: 4
-DE: 9
-NO: 3
-SI: 2
-Y: 2
-UNA: 3
 GUERRA: 5
 TENÍA: 2
 JARRA: 3

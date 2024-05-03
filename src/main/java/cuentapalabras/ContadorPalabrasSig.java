@@ -31,19 +31,26 @@ public class ContadorPalabrasSig extends ContadorPalabras{
     }
     private void anyadePalabrasNoSignificativas(String linea, String del) {
         String[] data = linea.split(del);
-        for(int i = 0; i<data.length; i++){
-            if(!data[i].isEmpty()){
-                incluye(data[i]);
+        for (String word : data) {
+            if (!word.isEmpty()) {
+                String upperWord = word.toUpperCase();
+                if (!noSignificativas.contains(upperWord)) {
+                    noSignificativas.add(upperWord);
+                }
             }
         }
     }
 
     @Override
     protected void incluye(String pal) {
-        if (!pal.isEmpty() && estaNoSig(pal) == -1) {
-            super.incluye(pal);
+        if (!pal.isEmpty()) {
+            String upperPal = pal.toUpperCase();
+            if (estaNoSig(upperPal) == -1) {
+                super.incluye(upperPal);
+            }
         }
     }
+
 
     public int estaNoSig(String pal){
         int bruh = 0;
