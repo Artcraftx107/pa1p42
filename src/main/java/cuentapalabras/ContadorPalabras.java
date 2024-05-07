@@ -62,7 +62,7 @@ public class ContadorPalabras {
         if(pos!=-1){
             aux = palabras.get(pos);
         }else{
-            throw new NoSuchElementException("La palabra "+n.toUpperCase()+" no esta en la lista de palabras");
+            throw new NoSuchElementException("No existe la palabra "+n);
         }
         return aux;
     }
