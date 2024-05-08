@@ -94,19 +94,7 @@ public class ContadorPalabrasSig extends ContadorPalabras{
      * @return
      */
     public int estaNoSig(String pal){
-        int bruh = 0;
-        boolean found = false;
-        while(bruh < noSignificativas.size() && !found){
-            if(noSignificativas.get(bruh).equalsIgnoreCase(pal)){
-                found = true;
-            }else{
-                bruh++;
-            }
-        }
-        if(!found){
-            bruh = -1;
-        }
-        return bruh;
+        return noSignificativas.indexOf(pal.toUpperCase());
     }
 
 }
