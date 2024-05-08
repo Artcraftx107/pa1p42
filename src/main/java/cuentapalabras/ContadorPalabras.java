@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.NoSuchElementException;
 
 public class ContadorPalabras {
-    private ArrayList<PalabraEnTexto> palabras;
+    private final ArrayList<PalabraEnTexto> palabras;
     public ContadorPalabras(){
         this.palabras=new ArrayList<>();
     }
@@ -37,8 +37,8 @@ public class ContadorPalabras {
     }
     private void incluyeTodas(String monkey, String del){
         String[] data = monkey.split(del);
-        for(int i = 0; i<data.length; i++){
-            incluye(data[i]);
+        for (String datum : data) {
+            incluye(datum);
         }
     }
     public void incluyeTodas(String[] texto, String del){
@@ -75,7 +75,7 @@ public class ContadorPalabras {
         if (sb.length() > 2) { // Check if the StringBuilder's length is greater than 2 characters
             sb.setLength(sb.length() - 2); // If so, remove the last two characters (hyphen and space) from the StringBuilder
         }
-        return "[" + sb.toString() + "]"; // Return the StringBuilder content enclosed in square brackets as a String
+        return "[" + sb + "]"; // Return the StringBuilder content enclosed in square brackets as a String
     }
     public void presentaPalabras(String fichero)throws FileNotFoundException{
         try (PrintWriter pw = new PrintWriter(fichero)){

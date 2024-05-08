@@ -1,7 +1,7 @@
 package cuentapalabras;
 
 public class PalabraEnTexto {
-    private String palabra;
+    private final String palabra;
     private int veces;
     public PalabraEnTexto(String n){
         if(n.isEmpty()){

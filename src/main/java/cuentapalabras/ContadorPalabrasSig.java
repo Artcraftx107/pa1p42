@@ -1,7 +1,6 @@
 package cuentapalabras;
 
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -27,9 +26,9 @@ public class ContadorPalabrasSig extends ContadorPalabras{
      */
     public void leeArrayNoSig(String[] cs2){
         this.noSignificativas=new ArrayList<>();
-        for(int i = 0; i< cs2.length; i++){
-            if(!cs2[i].isEmpty()){
-                noSignificativas.add(cs2[i].toUpperCase());
+        for (String s : cs2) {
+            if (!s.isEmpty()) {
+                noSignificativas.add(s.toUpperCase());
             }
         }
     }
